@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android,sdk," />
+  <meta name="keywords" content="adapter,notifyDataSetInvalidated,和notifyDataSetChanged," />
 
 
 
@@ -57,27 +57,25 @@
 
 
 
-<meta name="description" content="通常情况下，下载Android SDK需要连接谷歌的服务器进行下载，由于国内水深火热的网络，速度基本为0.好在国内也有一个更新的镜像地址。本文章介绍如何在不翻墙的情况下，使用国内镜像地址，更新android sdk.
-设置host首先在C:/Windows/System32/drivers/etc/hosts中设置hosts，需要管理员权限。
-#Google主页  
-203.208.46.146">
+<meta name="description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
+public void notifyDataSetChanged ()
+该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
+public void notifyDataSetIn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio SDK 更新方法">
-<meta property="og:url" content="http://chenchangming.github.io/2016/01/05/Android-Studio-SDK-更新方法/index.html">
+<meta property="og:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
+<meta property="og:url" content="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/index.html">
 <meta property="og:site_name" content="二毛的博客">
-<meta property="og:description" content="通常情况下，下载Android SDK需要连接谷歌的服务器进行下载，由于国内水深火热的网络，速度基本为0.好在国内也有一个更新的镜像地址。本文章介绍如何在不翻墙的情况下，使用国内镜像地址，更新android sdk.
-设置host首先在C:/Windows/System32/drivers/etc/hosts中设置hosts，需要管理员权限。
-#Google主页  
-203.208.46.146">
-<meta property="og:image" content="http://7xpo4c.com1.z0.glb.clouddn.com/androidsdk%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png">
-<meta property="og:image" content="http://7xpo4c.com1.z0.glb.clouddn.com/androidsdk%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8http.png">
-<meta property="og:updated_time" content="2016-01-05T02:11:29.000Z">
+<meta property="og:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
+public void notifyDataSetChanged ()
+该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
+public void notifyDataSetIn">
+<meta property="og:updated_time" content="2016-01-06T03:07:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio SDK 更新方法">
-<meta name="twitter:description" content="通常情况下，下载Android SDK需要连接谷歌的服务器进行下载，由于国内水深火热的网络，速度基本为0.好在国内也有一个更新的镜像地址。本文章介绍如何在不翻墙的情况下，使用国内镜像地址，更新android sdk.
-设置host首先在C:/Windows/System32/drivers/etc/hosts中设置hosts，需要管理员权限。
-#Google主页  
-203.208.46.146">
+<meta name="twitter:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
+<meta name="twitter:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
+public void notifyDataSetChanged ()
+该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
+public void notifyDataSetIn">
 
 
 
@@ -95,7 +93,7 @@
   };
 </script>
 
-  <title> Android Studio SDK 更新方法 | 二毛的博客 </title>
+  <title> Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别 | 二毛的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +269,7 @@
             
             
               
-                Android Studio SDK 更新方法
+                Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别
               
             
           </h1>
@@ -283,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-05T10:01:14+08:00" content="2016-01-05">
-              2016-01-05
+            <time itemprop="dateCreated" datetime="2016-01-06T10:53:35+08:00" content="2016-01-06">
+              2016-01-06
             </time>
           </span>
 
@@ -297,8 +295,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/AndroidStudio/" itemprop="url" rel="index">
-                    <span itemprop="name">AndroidStudio</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -313,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/Android-Studio-SDK-更新方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/Android-Studio-SDK-更新方法/" itemprop="commentsCount"></span>
+                <a href="/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -335,24 +333,18 @@
       
 
       
-        <p>通常情况下，下载Android SDK需要连接谷歌的服务器进行下载，由于国内水深火热的网络，速度基本为0.好在国内也有一个更新的镜像地址。本文章介绍如何在不翻墙的情况下，使用国内镜像地址，更新android sdk.</p>
-<h1 id="u8BBE_u7F6Ehost"><a href="#u8BBE_u7F6Ehost" class="headerlink" title="设置host"></a>设置host</h1><p>首先在C:/Windows/System32/drivers/etc/hosts中设置hosts，需要管理员权限。</p>
-<pre><code>#Google主页  
-203.208.46.146 www.google.com  
-##这行是为了方便打开Android开发官网 现在好像不翻也可以打开  
-74.125.113.121 developer.android.com  
-##更新的内容从以下地址下载  
-203.208.46.146 dl.google.com  
-203.208.46.146 dl-ssl.google.com
-</code></pre><h1 id="u66F4_u6539Android_SDK_Manager_u8BBE_u7F6E"><a href="#u66F4_u6539Android_SDK_Manager_u8BBE_u7F6E" class="headerlink" title="更改Android SDK Manager设置"></a>更改Android SDK Manager设置</h1><p>在Tools-&gt;Options中进行设置，修改配置如下：<br><img src="http://7xpo4c.com1.z0.glb.clouddn.com/androidsdk%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png" alt="androidsdk设置代理"></p>
-<pre><code>HTTP Proxy Server: mirrors.neusoft.edu.cn
-
-HTTP Proxy Port: 80
-</code></pre><p>然后勾选强制使用http:<br><img src="http://7xpo4c.com1.z0.glb.clouddn.com/androidsdk%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8http.png" alt="androidsdk强制使用http"><br>然后就大功告成，可以愉快飞速的下载Android SDK而不用担心翻墙网速等问题啦。</p>
-<blockquote>
-<p><a href="http://jinyudong.com/2014/11/12/Android-Studio-SDK-Update/" target="_blank" rel="external">http://jinyudong.com/2014/11/12/Android-Studio-SDK-Update/</a></p>
-</blockquote>
-
+        <p>notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。</p>
+<pre><code>public void notifyDataSetChanged ()
+</code></pre><p>该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。</p>
+<pre><code>public void notifyDataSetInvalidated ()
+</code></pre><p>该方法内部实现了在每个观察者上面调用onInvalidated事件。每当发现数据集监控有改变的情况，比如该数据集不再有效，就会调用此方法。</p>
+<pre><code>notifyDataSetInvalidated()，会重绘控件（还原到初始状态）
+notifyDataSetChanged()，重绘当前可见区域
+</code></pre><p><strong>心得：</strong></p>
+<pre><code>1. notifyDataSetChanged()和notifyDataSetInvalidated()刷新ListView的时候都不会改变当前显示的位置。而重新new一个Adapter，然后ListView重新setAdapter，会回到初始位置。
+2. notifyDataSetChanged：粮仓中得粮食少了，或者多了，发送通知。（数据集合的引用不变）
+   notifyDataSetInvalidated：粮仓变换了，比如原来从A仓取粮食，现在换成了B粮仓。比如重新setList()，更新Adapter中的List。（数据集合的引用变了）
+</code></pre>
       
     </div>
 
@@ -360,9 +352,11 @@ HTTP Proxy Port: 80
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag">#android</a>
+            <a href="/tags/adapter/" rel="tag">#adapter</a>
           
-            <a href="/tags/sdk/" rel="tag">#sdk</a>
+            <a href="/tags/notifyDataSetInvalidated/" rel="tag">#notifyDataSetInvalidated</a>
+          
+            <a href="/tags/和notifyDataSetChanged/" rel="tag">#和notifyDataSetChanged</a>
           
         </div>
       
@@ -371,17 +365,13 @@ HTTP Proxy Port: 80
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/04/2016-X实验/" rel="next" title="2016-X实验">
-                <i class="fa fa-chevron-left"></i> 2016-X实验
+              <a href="/2016/01/05/AndroidStudio插件之Android-ButterKnife-Zelezny/" rel="next" title="AndroidStudio插件之Android ButterKnife Zelezny">
+                <i class="fa fa-chevron-left"></i> AndroidStudio插件之Android ButterKnife Zelezny
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/AndroidStudio快捷键设置/" rel="prev" title="AndroidStudio快捷键设置">
-                AndroidStudio快捷键设置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -407,8 +397,8 @@ HTTP Proxy Port: 80
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/Android-Studio-SDK-更新方法/"
-           data-title="Android Studio SDK 更新方法" data-url="http://chenchangming.github.io/2016/01/05/Android-Studio-SDK-更新方法/">
+      <div class="ds-thread" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/"
+           data-title="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别" data-url="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/">
       </div>
     
   </div>
@@ -509,7 +499,7 @@ HTTP Proxy Port: 80
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u8BBE_u7F6Ehost"><span class="nav-number">1.</span> <span class="nav-text">设置host</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u66F4_u6539Android_SDK_Manager_u8BBE_u7F6E"><span class="nav-number">2.</span> <span class="nav-text">更改Android SDK Manager设置</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
