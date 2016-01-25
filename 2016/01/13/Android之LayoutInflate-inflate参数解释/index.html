@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="adapter,notifyDataSetInvalidated,和notifyDataSetChanged," />
+  <meta name="keywords" content="LayoutInflate.inflate," />
 
 
 
@@ -57,25 +57,22 @@
 
 
 
-<meta name="description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
+<meta name="description" content="加载布局
+
+public View inflate (int resource, ViewGroup root)　　Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error. Parameters 　　resource　　ID for an X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
-<meta property="og:url" content="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/index.html">
+<meta property="og:title" content="Android之LayoutInflate.inflate参数解释">
+<meta property="og:url" content="http://chenchangming.github.io/2016/01/13/Android之LayoutInflate-inflate参数解释/index.html">
 <meta property="og:site_name" content="二毛的博客">
-<meta property="og:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
-<meta property="og:updated_time" content="2016-01-06T03:07:07.000Z">
+<meta property="og:description" content="加载布局
+
+public View inflate (int resource, ViewGroup root)　　Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error. Parameters 　　resource　　ID for an X">
+<meta property="og:updated_time" content="2016-01-13T03:26:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
-<meta name="twitter:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
+<meta name="twitter:title" content="Android之LayoutInflate.inflate参数解释">
+<meta name="twitter:description" content="加载布局
+
+public View inflate (int resource, ViewGroup root)　　Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error. Parameters 　　resource　　ID for an X">
 
 
 
@@ -93,7 +90,7 @@ public void notifyDataSetIn">
   };
 </script>
 
-  <title> Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别 | 二毛的博客 </title>
+  <title> Android之LayoutInflate.inflate参数解释 | 二毛的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +266,7 @@ public void notifyDataSetIn">
             
             
               
-                Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别
+                Android之LayoutInflate.inflate参数解释
               
             
           </h1>
@@ -281,8 +278,8 @@ public void notifyDataSetIn">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-06T10:53:35+08:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-13T10:50:42+08:00" content="2016-01-13">
+              2016-01-13
             </time>
           </span>
 
@@ -311,8 +308,8 @@ public void notifyDataSetIn">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/" itemprop="commentsCount"></span>
+                <a href="/2016/01/13/Android之LayoutInflate-inflate参数解释/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/13/Android之LayoutInflate-inflate参数解释/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,18 +330,17 @@ public void notifyDataSetIn">
       
 
       
-        <p>notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。</p>
-<pre><code>public void notifyDataSetChanged ()
-</code></pre><p>该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。</p>
-<pre><code>public void notifyDataSetInvalidated ()
-</code></pre><p>该方法内部实现了在每个观察者上面调用onInvalidated事件。每当发现数据集监控有改变的情况，比如该数据集不再有效，就会调用此方法。</p>
-<pre><code>notifyDataSetInvalidated()，会重绘控件（还原到初始状态）
-notifyDataSetChanged()，重绘当前可见区域
-</code></pre><p><strong>心得：</strong></p>
-<pre><code>1. notifyDataSetChanged()和notifyDataSetInvalidated()刷新ListView的时候都不会改变当前显示的位置。而重新new一个Adapter，然后ListView重新setAdapter，会回到初始位置。
-2. notifyDataSetChanged：粮仓中得粮食少了，或者多了，发送通知。（数据集合的引用不变）
-   notifyDataSetInvalidated：粮仓变换了，比如原来从A仓取粮食，现在换成了B粮仓。比如重新setList()，更新Adapter中的List。（数据集合的引用变了）
-</code></pre>
+        <h2 id="u52A0_u8F7D_u5E03_u5C40"><a href="#u52A0_u8F7D_u5E03_u5C40" class="headerlink" title="加载布局"></a>加载布局</h2><ul>
+<li><blockquote>
+<p>public View inflate (int resource, ViewGroup root)<br>　　Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error.<br><strong> Parameters </strong><br>　　resource　　ID for an XML layout resource to load (e.g., R.layout.main_page)<u>（加载的布局id）</u><br>　　root　　Optional view to be the parent of the generated hierarchy.<u>（给该布局的外部再嵌套一层父布局，但不是把当前布局放入到界面已有布局中，比如xml界面，这个方法只是单纯的返回一个view对象。默认attachToRoot是true）</u><br><strong> Returns </strong><br>　　The root View of the inflated hierarchy. If root was supplied, this is the root View; otherwise it is the root of the inflated XML file. </p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>public View inflate (int resource, ViewGroup root, boolean attachToRoot)<br>　　Inflate a new view hierarchy from the specified xml resource. Throws InflateException if there is an error.<br><strong>Parameters</strong><br>　　resource　　ID for an XML layout resource to load (e.g., R.layout.main_page)<u>（加载的布局id）</u><br>　　root　　Optional view to be the parent of the generated hierarchy (if attachToRoot is true), or else simply an object that provides a set of LayoutParams values for root of the returned hierarchy (if attachToRoot is false.)<u>（如果第3个参数是true,这个参数的意思同上，如果第3个参数是false，这个参数仅仅是为返回的view提供LayoutParams的单纯对象）</u><br>　　attachToRoot　　Whether the inflated hierarchy should be attached to the root parameter? If false, root is only used to create the correct subclass of LayoutParams for the root view in the XML.<u>（返回的view是否应用root的LayoutParams，如果是false，第2个参数仅仅用来给提供LayoutParams）</u><br><strong>Returns</strong><br>　　The root View of the inflated hierarchy. If root was supplied and attachToRoot is true, this is root; otherwise it is the root of the inflated XML file. </p>
+</blockquote>
+</li>
+</ul>
+
       
     </div>
 
@@ -352,11 +348,7 @@ notifyDataSetChanged()，重绘当前可见区域
       
         <div class="post-tags">
           
-            <a href="/tags/adapter/" rel="tag">#adapter</a>
-          
-            <a href="/tags/notifyDataSetInvalidated/" rel="tag">#notifyDataSetInvalidated</a>
-          
-            <a href="/tags/和notifyDataSetChanged/" rel="tag">#和notifyDataSetChanged</a>
+            <a href="/tags/LayoutInflate-inflate/" rel="tag">#LayoutInflate.inflate</a>
           
         </div>
       
@@ -365,17 +357,13 @@ notifyDataSetChanged()，重绘当前可见区域
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/AndroidStudio插件之Android-ButterKnife-Zelezny/" rel="next" title="AndroidStudio插件之Android ButterKnife Zelezny">
-                <i class="fa fa-chevron-left"></i> AndroidStudio插件之Android ButterKnife Zelezny
+              <a href="/2016/01/13/Android-SDK中离线文档打开慢的问题/" rel="next" title="Android SDK中离线文档打开慢的问题">
+                <i class="fa fa-chevron-left"></i> Android SDK中离线文档打开慢的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/07/AndroidStudio插件之Genymotion/" rel="prev" title="AndroidStudio插件之Genymotion">
-                AndroidStudio插件之Genymotion <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -401,8 +389,8 @@ notifyDataSetChanged()，重绘当前可见区域
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/"
-           data-title="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别" data-url="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/">
+      <div class="ds-thread" data-thread-key="2016/01/13/Android之LayoutInflate-inflate参数解释/"
+           data-title="Android之LayoutInflate.inflate参数解释" data-url="http://chenchangming.github.io/2016/01/13/Android之LayoutInflate-inflate参数解释/">
       </div>
     
   </div>
@@ -503,7 +491,7 @@ notifyDataSetChanged()，重绘当前可见区域
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u52A0_u8F7D_u5E03_u5C40"><span class="nav-number">1.</span> <span class="nav-text">加载布局</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

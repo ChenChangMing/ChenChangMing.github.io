@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="adapter,notifyDataSetInvalidated,和notifyDataSetChanged," />
+  <meta name="keywords" content="Android Doc," />
 
 
 
@@ -57,25 +57,28 @@
 
 
 
-<meta name="description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
+<meta name="description" content="Android SDK中的离线文档虽然都是本地文件，但是有很多Javascript, CSS需要连接Google的服务器，因此造成打开速度很慢。
+一种方法是全部去除这些引用，但是600M的离线文件进行修改会有很大工作量。而且，一旦离线文档升级又要重新维护。
+另外一种方法是使浏览器打开这些html文档时使用离线模式。
+如果是IE浏览器：勾选”File” – “Work Offline”
+如果是Fir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
-<meta property="og:url" content="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/index.html">
+<meta property="og:title" content="Android SDK中离线文档打开慢的问题">
+<meta property="og:url" content="http://chenchangming.github.io/2016/01/13/Android-SDK中离线文档打开慢的问题/index.html">
 <meta property="og:site_name" content="二毛的博客">
-<meta property="og:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
-<meta property="og:updated_time" content="2016-01-06T03:07:07.000Z">
+<meta property="og:description" content="Android SDK中的离线文档虽然都是本地文件，但是有很多Javascript, CSS需要连接Google的服务器，因此造成打开速度很慢。
+一种方法是全部去除这些引用，但是600M的离线文件进行修改会有很大工作量。而且，一旦离线文档升级又要重新维护。
+另外一种方法是使浏览器打开这些html文档时使用离线模式。
+如果是IE浏览器：勾选”File” – “Work Offline”
+如果是Fir">
+<meta property="og:updated_time" content="2016-01-13T02:29:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别">
-<meta name="twitter:description" content="notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。
-public void notifyDataSetChanged ()
-该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
-public void notifyDataSetIn">
+<meta name="twitter:title" content="Android SDK中离线文档打开慢的问题">
+<meta name="twitter:description" content="Android SDK中的离线文档虽然都是本地文件，但是有很多Javascript, CSS需要连接Google的服务器，因此造成打开速度很慢。
+一种方法是全部去除这些引用，但是600M的离线文件进行修改会有很大工作量。而且，一旦离线文档升级又要重新维护。
+另外一种方法是使浏览器打开这些html文档时使用离线模式。
+如果是IE浏览器：勾选”File” – “Work Offline”
+如果是Fir">
 
 
 
@@ -93,7 +96,7 @@ public void notifyDataSetIn">
   };
 </script>
 
-  <title> Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别 | 二毛的博客 </title>
+  <title> Android SDK中离线文档打开慢的问题 | 二毛的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +272,7 @@ public void notifyDataSetIn">
             
             
               
-                Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别
+                Android SDK中离线文档打开慢的问题
               
             
           </h1>
@@ -281,8 +284,8 @@ public void notifyDataSetIn">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-06T10:53:35+08:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-13T10:27:13+08:00" content="2016-01-13">
+              2016-01-13
             </time>
           </span>
 
@@ -311,8 +314,8 @@ public void notifyDataSetIn">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/" itemprop="commentsCount"></span>
+                <a href="/2016/01/13/Android-SDK中离线文档打开慢的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/13/Android-SDK中离线文档打开慢的问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,18 +336,17 @@ public void notifyDataSetIn">
       
 
       
-        <p>notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。</p>
-<pre><code>public void notifyDataSetChanged ()
-</code></pre><p>该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。</p>
-<pre><code>public void notifyDataSetInvalidated ()
-</code></pre><p>该方法内部实现了在每个观察者上面调用onInvalidated事件。每当发现数据集监控有改变的情况，比如该数据集不再有效，就会调用此方法。</p>
-<pre><code>notifyDataSetInvalidated()，会重绘控件（还原到初始状态）
-notifyDataSetChanged()，重绘当前可见区域
-</code></pre><p><strong>心得：</strong></p>
-<pre><code>1. notifyDataSetChanged()和notifyDataSetInvalidated()刷新ListView的时候都不会改变当前显示的位置。而重新new一个Adapter，然后ListView重新setAdapter，会回到初始位置。
-2. notifyDataSetChanged：粮仓中得粮食少了，或者多了，发送通知。（数据集合的引用不变）
-   notifyDataSetInvalidated：粮仓变换了，比如原来从A仓取粮食，现在换成了B粮仓。比如重新setList()，更新Adapter中的List。（数据集合的引用变了）
-</code></pre>
+        <p>Android SDK中的离线文档虽然都是本地文件，但是有很多Javascript, CSS需要连接Google的服务器，因此造成打开速度很慢。</p>
+<p>一种方法是全部去除这些引用，但是600M的离线文件进行修改会有很大工作量。而且，一旦离线文档升级又要重新维护。</p>
+<p>另外一种方法是使浏览器打开这些html文档时使用离线模式。</p>
+<p>如果是IE浏览器：勾选”File” – “Work Offline”</p>
+<p>如果是Firefox浏览器，在浏览离线文档时，在File菜单中勾上”Work Offline”</p>
+<p>也可以安装脱机插件浏览插件Work Offline 2.0：<a href="https://addons.mozilla.org/zh-CN/firefox/addon/work-offline/?src=userprofile" target="_blank" rel="external">https://addons.mozilla.org/zh-CN/firefox/addon/work-offline/?src=userprofile</a></p>
+<p>如果是Chrome浏览器，它本身没有Offline Mode，不过可以安装一个proxy管理插件，例如Switchysharp，然后设置一个不存在的地址。这样迂回实现Offline模式。</p>
+<p>也有好心的兄弟写了一个Chrome浏览器插件Android Offline Doc，安装方法：</p>
+<p>到<a href="https://github.com/xesam/android_offline_doc_plugin下载整个zip包" target="_blank" rel="external">https://github.com/xesam/android_offline_doc_plugin下载整个zip包</a><br>解压到一个目录<br>打开Chrome，”Tools” – “Extension”，勾选”Developer mode”<br>点击”Load unpacked extension”按钮，找到刚才解压的目录下的plugin目录，插件安装完毕<br>使用时，请点击Android机器人图标，等它上面叠加了”ON”字样后就屏蔽了对google的访问，相当由于离线浏览，但只对Google网站生效。<br>还可以浏览国内的镜像网站：</p>
+<p><a href="http://android-doc.com/" target="_blank" rel="external">http://android-doc.com/</a><br><a href="http://android.toolib.net/" target="_blank" rel="external">http://android.toolib.net/</a><br><a href="http://www.apkbus.com/design/" target="_blank" rel="external">http://www.apkbus.com/design/</a></p>
+
       
     </div>
 
@@ -352,11 +354,7 @@ notifyDataSetChanged()，重绘当前可见区域
       
         <div class="post-tags">
           
-            <a href="/tags/adapter/" rel="tag">#adapter</a>
-          
-            <a href="/tags/notifyDataSetInvalidated/" rel="tag">#notifyDataSetInvalidated</a>
-          
-            <a href="/tags/和notifyDataSetChanged/" rel="tag">#和notifyDataSetChanged</a>
+            <a href="/tags/Android-Doc/" rel="tag">#Android Doc</a>
           
         </div>
       
@@ -365,16 +363,16 @@ notifyDataSetChanged()，重绘当前可见区域
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/AndroidStudio插件之Android-ButterKnife-Zelezny/" rel="next" title="AndroidStudio插件之Android ButterKnife Zelezny">
-                <i class="fa fa-chevron-left"></i> AndroidStudio插件之Android ButterKnife Zelezny
+              <a href="/2016/01/12/Android之自定义View/" rel="next" title="Android之自定义View">
+                <i class="fa fa-chevron-left"></i> Android之自定义View
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/07/AndroidStudio插件之Genymotion/" rel="prev" title="AndroidStudio插件之Genymotion">
-                AndroidStudio插件之Genymotion <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/13/Android之LayoutInflate-inflate参数解释/" rel="prev" title="Android之LayoutInflate.inflate参数解释">
+                Android之LayoutInflate.inflate参数解释 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -401,8 +399,8 @@ notifyDataSetChanged()，重绘当前可见区域
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/"
-           data-title="Android之Adapter的notifyDataSetInvalidated()和notifyDataSetChanged()的区别" data-url="http://chenchangming.github.io/2016/01/06/Android之Adapter的notifyDataSetInvalidated-和notifyDataSetChanged-的区别/">
+      <div class="ds-thread" data-thread-key="2016/01/13/Android-SDK中离线文档打开慢的问题/"
+           data-title="Android SDK中离线文档打开慢的问题" data-url="http://chenchangming.github.io/2016/01/13/Android-SDK中离线文档打开慢的问题/">
       </div>
     
   </div>
